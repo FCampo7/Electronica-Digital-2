@@ -1,0 +1,42 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Mon Oct 19 11:53:09 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000028
+                   .cinit    romdata   0x000014    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000015      
+            22 out of 4359 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    bucle   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                   bucle2   0x00000c    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                      fin   0x000014    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                prenderb0   0x000010    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                prenderb1   0x000012    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                    bucle   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                   bucle2   0x00000c    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                prenderb0   0x000010    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                prenderb1   0x000012    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+                      fin   0x000014    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio11\Ejercicio11.asm
+
+

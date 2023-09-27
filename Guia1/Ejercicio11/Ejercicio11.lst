@@ -1,0 +1,66 @@
+MPASM  5.51                   EJERCICIO11.ASM   10-19-2020  11:53:08         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16f88
+                      00002 
+  00000003            00003 status EQU 0x03
+  00000005            00004 PA EQU 0x05
+  00000006            00005 PB EQU 0x06
+                      00006 
+Warning[205]: Found directive in column 1. (ORG)
+                      00007 ORG 0x000
+                      00008 
+0000                  00009 inicio
+0000   1683           00010         bsf status,5
+0001   3000           00011         movlw 0x00 ;Decimos que el puerto A es digital
+0002   009B           00012         movwf 0x1B
+0003   30FF           00013         movlw 0xff
+0004   0085           00014         movwf PA
+0005   0186           00015         clrf PB
+0006   1283           00016         bcf status,5
+0007   0185           00017         clrf PA
+0008   0186           00018         clrf PB
+0009                  00019 bucle
+0009   1905           00020         btfsc PA,2
+000A   2???           00021         goto prenderb0
+000B   1006           00022         bcf PB,0
+000C                  00023 bucle2
+000C   1985           00024         btfsc PA,3
+000D   2???           00025         goto prenderb1
+000E   1086           00026         bcf PB,1
+000F   2???           00027         goto bucle
+0010                  00028 prenderb0
+0010   1406           00029         bsf PB,0
+0011   2???           00030         goto bucle2
+0012                  00031 prenderb1
+0012   1486           00032         bsf PB,1
+0013   2???           00033         goto bucle
+0014                  00034 fin
+                      00035         end
+MPASM  5.51                   EJERCICIO11.ASM   10-19-2020  11:53:08         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PA                                00000005
+PB                                00000006
+__16F88                           00000001
+__DEBUG                           1
+bucle                             00000009
+bucle2                            0000000C
+fin                               00000014
+inicio                            00000000
+prenderb0                         00000010
+prenderb1                         00000012
+status                            00000003
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

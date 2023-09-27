@@ -1,0 +1,188 @@
+CCS PCM C Compiler, Version 5.076, 56587               20-sep.-20 14:06
+
+               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guía2\Problema 3\main.lst
+
+               ROM used:   120 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           10 (3%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   04E
+0003:  NOP
+.................... #include <main.h> 
+.................... #include <16F88.h> 
+.................... //////////// Standard Header file for the PIC16F88 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F88 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #use delay(crystal=4000000) 
+0004:  MOVLW  25
+0005:  MOVWF  04
+0006:  BCF    03.7
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   018
+000A:  MOVLW  01
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  4A
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  GOTO   016
+0016:  DECFSZ 00,F
+0017:  GOTO   00A
+0018:  RETURN
+....................  
+....................  
+....................  
+.................... #FUSES NOWDT 
+.................... #BYTE TRISA=0x85 
+.................... #BYTE PORTA=0x05 
+.................... #BYTE TRISB=0x86 
+.................... #BYTE PORTB=0x06 
+....................  
+.................... void intermitenciaPA(int bit, int16 ms){ 
+....................    if(bit_test(PORTA, bit) == 1) 
+0019:  MOVF   05,W
+001A:  MOVWF  77
+001B:  MOVF   21,W
+001C:  MOVWF  78
+001D:  BTFSC  03.2
+001E:  GOTO   023
+001F:  BCF    03.0
+0020:  RRF    77,F
+0021:  DECFSZ 78,F
+0022:  GOTO   01F
+0023:  BTFSS  77.0
+0024:  GOTO   033
+....................       bit_clear(PORTA, bit); 
+0025:  MOVLW  01
+0026:  MOVWF  77
+0027:  MOVF   21,W
+0028:  MOVWF  78
+0029:  BTFSC  03.2
+002A:  GOTO   02F
+002B:  BCF    03.0
+002C:  RLF    77,F
+002D:  DECFSZ 78,F
+002E:  GOTO   02B
+002F:  MOVF   77,W
+0030:  XORLW  FF
+0031:  ANDWF  05,F
+0032:  GOTO   03F
+....................    else  
+....................       bit_set(PORTA, bit); 
+0033:  MOVLW  01
+0034:  MOVWF  77
+0035:  MOVF   21,W
+0036:  MOVWF  78
+0037:  BTFSC  03.2
+0038:  GOTO   03D
+0039:  BCF    03.0
+003A:  RLF    77,F
+003B:  DECFSZ 78,F
+003C:  GOTO   039
+003D:  MOVF   77,W
+003E:  IORWF  05,F
+....................    delay_ms(ms); 
+003F:  MOVF   23,W
+0040:  MOVWF  24
+0041:  INCF   24,F
+0042:  DECF   24,F
+0043:  BTFSC  03.2
+0044:  GOTO   049
+0045:  MOVLW  FF
+0046:  MOVWF  25
+0047:  CALL   004
+0048:  GOTO   042
+0049:  MOVF   22,W
+004A:  MOVWF  25
+004B:  CALL   004
+004C:  BCF    0A.3
+004D:  GOTO   076 (RETURN)
+.................... } 
+....................  
+.................... void main() 
+004E:  MOVF   03,W
+004F:  ANDLW  1F
+0050:  MOVWF  03
+0051:  BSF    03.5
+0052:  BCF    1F.4
+0053:  BCF    1F.5
+0054:  MOVF   1B,W
+0055:  ANDLW  80
+0056:  MOVWF  1B
+0057:  MOVLW  07
+0058:  MOVWF  1C
+0059:  BCF    03.7
+.................... { 
+....................    TRISA=0xEF; //Configuramos el pin RA4 como salida en lugar del RA5 porque RA5 es solo de entrada; 
+005A:  MOVLW  EF
+005B:  MOVWF  05
+....................    PORTA=0x00; 
+005C:  BCF    03.5
+005D:  CLRF   05
+....................     
+....................    TRISB=0x18; 
+005E:  MOVLW  18
+005F:  BSF    03.5
+0060:  MOVWF  06
+....................    PORTB=0x00; 
+0061:  BCF    03.5
+0062:  CLRF   06
+....................     
+....................    while(1) 
+....................    { 
+....................       if(bit_test(PORTB, 3)==bit_test(PORTB, 4)) 
+0063:  MOVLW  00
+0064:  BTFSC  06.3
+0065:  MOVLW  01
+0066:  MOVWF  21
+0067:  MOVLW  00
+0068:  BTFSC  06.4
+0069:  MOVLW  01
+006A:  SUBWF  21,W
+006B:  BTFSS  03.2
+006C:  GOTO   075
+....................          intermitenciaPA(4, 500); 
+006D:  MOVLW  04
+006E:  MOVWF  21
+006F:  MOVLW  01
+0070:  MOVWF  23
+0071:  MOVLW  F4
+0072:  MOVWF  22
+0073:  GOTO   019
+0074:  GOTO   076
+....................       else 
+....................          bit_clear(PORTA, 4); 
+0075:  BCF    05.4
+0076:  GOTO   063
+....................    } 
+....................  
+.................... } 
+0077:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F61   NOWDT PUT XT MCLR BROWNOUT NOLVP NOCPD NOWRT NODEBUG CCPB0 NOPROTECT
+   Word  2: 3FFF   FCMEN IESO

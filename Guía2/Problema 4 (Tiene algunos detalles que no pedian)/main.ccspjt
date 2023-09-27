@@ -1,0 +1,71 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\7Seg\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=4
+D1=21-09-2020
+D1_L=12
+D1_L1=[49749]Project Opened.
+D1_L2=[49756]Started Editing.
+D1_L3=[50247]Stopped Editing.
+D1_L4=[50635]Started Editing.
+D1_L5=[51534]Stopped Editing.
+TotalEdit=37
+TotalDebug=0
+D1_E=36
+D1_D=0
+D1_L6=[51535]Project Closed.
+D1_L7=[55947]Project Opened.
+D1_L8=[55957]Started Editing.
+D1_L9=[57247]Stopped Editing.
+D1_L10=[57296]Started Editing.
+D1_L11=[57596]Stopped Editing.
+D1_L12=[60356]Project Closed.
+D2=22-09-2020
+D2_L=4
+D2_L1=[51261]Project Opened.
+D2_L2=[53140]Project Closed.
+D2_L3=[56057]Project Opened.
+D2_L4=[56119]Project Closed.
+D3=26-09-2020
+D3_L=6
+D3_L1=[69941]Project Opened.
+D3_L2=[71208]Project Closed.
+D3_L3=[71220]Project Opened.
+D3_L4=[71348]Started Editing.
+D3_L5=[71664]Stopped Editing.
+D3_E=1
+D3_D=0
+D3_L6=[72335]Project Closed.
+D4=29-09-2020
+D4_L=2
+D4_L1=[53553]Project Opened.
+D4_L2=[53666]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=30
+[Units]
+Count=1
+1=main (main)

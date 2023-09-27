@@ -1,0 +1,36 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Mon Oct 19 11:41:01 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000022
+                   .cinit    romdata   0x000011    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000012      
+            19 out of 4359 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   apagar   0x00000f    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio12\Ejercicio12.asm
+                    bucle   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio12\Ejercicio12.asm
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio12\Ejercicio12.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio12\Ejercicio12.asm
+                    bucle   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio12\Ejercicio12.asm
+                   apagar   0x00000f    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio12\Ejercicio12.asm
+
+

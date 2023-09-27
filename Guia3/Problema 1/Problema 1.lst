@@ -1,0 +1,190 @@
+CCS PCM C Compiler, Version 5.076, 56587               10-oct.-20 11:54
+
+               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Problema 1\Problema 1.lst
+
+               ROM used:   113 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   14 (4%) at main() level
+                           14 (4%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   04D
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   7F,W
+0009:  MOVWF  20
+000A:  MOVF   0A,W
+000B:  MOVWF  27
+000C:  CLRF   0A
+000D:  SWAPF  20,F
+000E:  MOVF   04,W
+000F:  MOVWF  22
+0010:  MOVF   77,W
+0011:  MOVWF  23
+0012:  MOVF   78,W
+0013:  MOVWF  24
+0014:  MOVF   79,W
+0015:  MOVWF  25
+0016:  MOVF   7A,W
+0017:  MOVWF  26
+0018:  BCF    03.7
+0019:  BCF    03.5
+001A:  BTFSS  0B.4
+001B:  GOTO   01E
+001C:  BTFSC  0B.1
+001D:  GOTO   033
+001E:  BTFSS  0B.5
+001F:  GOTO   022
+0020:  BTFSC  0B.2
+0021:  GOTO   035
+0022:  MOVF   22,W
+0023:  MOVWF  04
+0024:  MOVF   23,W
+0025:  MOVWF  77
+0026:  MOVF   24,W
+0027:  MOVWF  78
+0028:  MOVF   25,W
+0029:  MOVWF  79
+002A:  MOVF   26,W
+002B:  MOVWF  7A
+002C:  MOVF   27,W
+002D:  MOVWF  0A
+002E:  SWAPF  21,W
+002F:  MOVWF  03
+0030:  SWAPF  7F,F
+0031:  SWAPF  7F,W
+0032:  RETFIE
+0033:  BCF    0A.3
+0034:  GOTO   037
+0035:  BCF    0A.3
+0036:  GOTO   03F
+.................... /* 
+.................... Realice una rutina que, por intermedio del Timer 0, cambie el valor del pin 
+.................... RB1 cada 500ms. A su vez, el pin RB1 debe estar conectado al pin RB0 de forma que active 
+.................... la interrupción externa del RB0 y en esta interrupción cambie el estado de un led en el pin 
+.................... RB7 
+.................... */ 
+....................  
+.................... #include <Problema 1.h> 
+.................... #include <16F88.h> 
+.................... //////////// Standard Header file for the PIC16F88 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F88 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #use delay(clock=4000000) 
+....................  
+....................  
+.................... #fuses XT,NOWDT 
+.................... #byte PORTB=0x06 
+.................... #BYTE TRISB=0x86 
+....................  
+.................... int cont=10; 
+....................  
+.................... #INT_EXT 
+.................... void ext_isr(){ 
+.................... 	output_toggle(PIN_B7); 
+0037:  BSF    03.5
+0038:  BCF    06.7
+0039:  MOVLW  80
+003A:  BCF    03.5
+003B:  XORWF  06,F
+.................... } 
+....................  
+003C:  BCF    0B.1
+003D:  BCF    0A.3
+003E:  GOTO   022
+.................... #INT_TIMER0 
+.................... void TIMER0_isr(){ 
+.................... 	cont--; 
+003F:  DECFSZ 28,F
+.................... 	if(cont==0){ 
+0040:  GOTO   048
+....................    	output_toggle(PIN_B1); 
+0041:  BSF    03.5
+0042:  BCF    06.1
+0043:  MOVLW  02
+0044:  BCF    03.5
+0045:  XORWF  06,F
+.................... 		cont=10; 
+0046:  MOVLW  0A
+0047:  MOVWF  28
+.................... 	} 
+.................... 	set_timer0(0x40); //0x40=64=el valor para que sean 50ms => para que sea 500ms hay que interrumpir 10 veces 
+0048:  MOVLW  40
+0049:  MOVWF  01
+004A:  BCF    0B.2
+004B:  BCF    0A.3
+004C:  GOTO   022
+.................... } 
+.................... void main() 
+004D:  MOVF   03,W
+004E:  ANDLW  1F
+004F:  MOVWF  03
+0050:  MOVLW  0A
+0051:  MOVWF  28
+0052:  BSF    03.5
+0053:  BCF    1F.4
+0054:  BCF    1F.5
+0055:  MOVF   1B,W
+0056:  ANDLW  80
+0057:  MOVWF  1B
+0058:  MOVLW  07
+0059:  MOVWF  1C
+005A:  BCF    03.7
+.................... { 
+.................... 	TRISB=0x01; 
+005B:  MOVLW  01
+005C:  MOVWF  06
+.................... 	PORTB=0x00; 
+005D:  BCF    03.5
+005E:  CLRF   06
+.................... 	port_b_pullups(TRUE); 
+005F:  BSF    03.5
+0060:  BCF    01.7
+.................... 	setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256); 
+0061:  MOVF   01,W
+0062:  ANDLW  C0
+0063:  IORLW  07
+0064:  MOVWF  01
+.................... 	set_timer0(0x40); 
+0065:  MOVLW  40
+0066:  BCF    03.5
+0067:  MOVWF  01
+.................... 	enable_interrupts(int_ext); 
+0068:  BSF    0B.4
+.................... 	ext_int_edge (L_TO_H); 
+0069:  BSF    03.5
+006A:  BSF    01.6
+.................... 	enable_interrupts(INT_TIMER0); 
+006B:  BCF    03.5
+006C:  BSF    0B.5
+.................... 	enable_interrupts(GLOBAL); 
+006D:  MOVLW  C0
+006E:  IORWF  0B,F
+....................  
+.................... 	while(1); 
+006F:  GOTO   06F
+.................... } 
+0070:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F61   NOWDT PUT XT MCLR BROWNOUT NOLVP NOCPD NOWRT NODEBUG CCPB0 NOPROTECT
+   Word  2: 3FFF   FCMEN IESO

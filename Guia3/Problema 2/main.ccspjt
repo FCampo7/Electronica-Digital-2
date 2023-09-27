@@ -1,0 +1,55 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Problema 2\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=3
+D1=10-10-2020
+D1_L=8
+D1_L1=[43020]Project Opened.
+D1_L2=[43048]Started Editing.
+D1_L3=[43372]Stopped Editing.
+D1_L4=[44878]Started Editing.
+D1_L5=[46752]Stopped Editing.
+D1_L6=[49682]Started Editing.
+D1_L7=[50051]Stopped Editing.
+TotalEdit=28
+TotalDebug=0
+D1_E=28
+D1_D=0
+D1_L8=[51337]Project Closed.
+D2=11-10-2020
+D2_L=2
+D2_L1=[42175]Project Opened.
+D2_L2=[42307]Project Closed.
+D3=13-10-2020
+D3_L=2
+D3_L1=[50614]Project Opened.
+D3_L2=[51513]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=2
+[Units]
+Count=1
+1=main (main)

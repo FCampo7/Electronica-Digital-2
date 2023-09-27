@@ -1,0 +1,55 @@
+MPASM  5.51                        CODIGO.ASM   11-29-2020  11:57:13         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16F88
+                      00002 
+                      00003 ;variables
+  00000000            00004 indf    EQU 0x00
+  00000004            00005 fsr     EQU 0x04
+  00000041            00006 corte   EQU 0x41
+                      00007 
+                      00008 ;origen
+Warning[205]: Found directive in column 1. (ORG)
+                      00009 ORG 0x000
+                      00010 
+0000                  00011 inicio
+0000   3010           00012         movlw 0x10 
+0001   00A1           00013         movwf 0x21 ;ponemos un d'16' en estas 3 direcciones de memoria
+0002   00B0           00014         movwf 0x30
+0003   00BF           00015         movwf 0x3F
+0004   3020           00016         movlw d'32'
+0005   00C1           00017         movwf corte ;Ponemos un d'32' en corte
+0006   3020           00018         movlw 0x20
+0007   0084           00019         movwf fsr ;Posicionamos el registro de file select register a la posicion 0x20
+                      00020 
+0008                  00021 bucle
+0008   0180           00022         clrf indf ;Limpiamos la posicion a la que apunta fsr
+Message[305]: Using default destination of 1 (file).
+0009   0A84           00023         incf fsr ;Pasamos a la siguiente posicion de memoria
+Message[305]: Using default destination of 1 (file).
+000A   0BC1           00024         decfsz corte ;decrementamos corte y si es 0 terminamos el programa
+000B   2???           00025         goto bucle
+                      00026         end
+MPASM  5.51                        CODIGO.ASM   11-29-2020  11:57:13         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F88                           00000001
+__DEBUG                           1
+bucle                             00000008
+corte                             00000041
+fsr                               00000004
+indf                              00000000
+inicio                            00000000
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

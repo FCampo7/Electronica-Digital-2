@@ -1,0 +1,5 @@
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Ejemplo 2\main on 28-nov.-20 at 12:10
+>>> Warning 203 "main.c" Line 16(1,1): Condition always TRUE
+      Memory usage:   ROM=2%      RAM=4% - 4%
+      0 Errors,  1 Warnings.
+Build Successful.

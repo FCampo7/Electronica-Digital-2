@@ -1,0 +1,13 @@
+ÀÄmain
+   ÀÄMAIN  0/37  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄParpadeoInicial  0/38  Ram=1
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÀÄ@delay_ms1  0/21  Ram=1
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÀÄParpadeoInicial  0/38  Ram=1
+         ÀÄ*

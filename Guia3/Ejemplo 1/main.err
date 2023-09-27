@@ -1,0 +1,7 @@
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Ejemplo 1\main on 29-sep.-20 at 15:08
+>>> Warning 208 "main.c" Line 10(1,8): Function not void and does not return a value  ext_isr
+>>> Warning 203 "main.c" Line 20(1,1): Condition always TRUE
+>>> Warning 202 "main.c" Line 6(6,12): Variable never used:   cambio
+      Memory usage:   ROM=2%      RAM=4% - 4%
+      0 Errors,  3 Warnings.
+Build Successful.

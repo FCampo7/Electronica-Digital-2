@@ -1,0 +1,54 @@
+MPASM  5.51                        CODIGO.ASM   11-29-2020  16:54:25         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16F88
+                      00002 
+  00000006            00003 PB EQU 0x06
+  00000003            00004 st EQU 0x03
+                      00005 
+Warning[205]: Found directive in column 1. (ORG)
+                      00006 ORG 0x000
+                      00007 
+0000                  00008 inicio
+0000   1683           00009         bsf st,5
+0001   300F           00010         movlw 0x0F
+0002   0086           00011         movwf PB
+0003   1283           00012         bcf st,5
+0004   0186           00013         clrf PB
+0005                  00014 bucle
+0005   1806           00015         btfsc PB,0 ;PB0==1 comprobar; PB0==0 apagar
+0006   2???           00016         goto comprobar
+0007                  00017 apagar
+0007   1206           00018         bcf PB,4
+0008   2???           00019         goto bucle
+0009                  00020 comprobar
+0009   1C86           00021         btfss PB,1 ;PB1==1 prende; PB1==0 apaga
+000A   2???           00022         goto apagar
+000B   1606           00023         bsf PB,4
+000C   2???           00024         goto bucle
+Warning[205]: Found directive in column 1. (end)
+                      00025 end
+MPASM  5.51                        CODIGO.ASM   11-29-2020  16:54:25         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PB                                00000006
+__16F88                           00000001
+__DEBUG                           1
+apagar                            00000007
+bucle                             00000005
+comprobar                         00000009
+inicio                            00000000
+st                                00000003
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

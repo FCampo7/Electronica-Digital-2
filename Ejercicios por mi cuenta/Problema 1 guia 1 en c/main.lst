@@ -1,0 +1,90 @@
+CCS PCM C Compiler, Version 5.076, 56587               19-oct.-20 11:01
+
+               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 1 guia 1 en c\main.lst
+
+               ROM used:   32 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   7 (2%) at main() level
+                           7 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... #include <main.h> 
+.................... #include <16F88.h> 
+.................... //////////// Standard Header file for the PIC16F88 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F88 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #use delay(crystal=4000000) 
+....................  
+....................  
+....................  
+.................... #byte porta=0x05 
+.................... #byte portb=0x06 
+....................  
+.................... void main() 
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+0007:  BSF    03.5
+0008:  BCF    1F.4
+0009:  BCF    1F.5
+000A:  MOVF   1B,W
+000B:  ANDLW  80
+000C:  MOVWF  1B
+000D:  MOVLW  07
+000E:  MOVWF  1C
+000F:  BCF    03.7
+.................... { 
+.................... 	set_tris_a(0xFF); 
+0010:  MOVLW  FF
+0011:  MOVWF  05
+.................... 	set_tris_b(0x00); 
+0012:  MOVLW  00
+0013:  MOVWF  06
+....................   	 
+.................... 	porta=0x00; 
+0014:  BCF    03.5
+0015:  CLRF   05
+.................... 	portb=0x00; 
+0016:  CLRF   06
+....................   	 
+.................... 	while(TRUE) 
+.................... 	{ 
+.................... 		if(bit_test(porta,0)==1 && bit_test(porta,1)==1){ 
+0017:  BTFSS  05.0
+0018:  GOTO   01D
+0019:  BTFSS  05.1
+001A:  GOTO   01D
+.................... 			bit_set(portb,0); 
+001B:  BSF    06.0
+.................... 		} 
+001C:  GOTO   01E
+.................... 		else 
+.................... 			bit_clear(portb,0); 
+001D:  BCF    06.0
+001E:  GOTO   017
+.................... 	} 
+....................  
+.................... } 
+001F:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F61   NOWDT PUT XT MCLR BROWNOUT NOLVP NOCPD NOWRT NODEBUG CCPB0 NOPROTECT
+   Word  2: 3FFF   FCMEN IESO

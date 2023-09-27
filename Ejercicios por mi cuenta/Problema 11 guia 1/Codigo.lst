@@ -1,0 +1,59 @@
+MPASM  5.51                        CODIGO.ASM   11-29-2020  16:35:57         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16F88
+                      00002 
+  00000006            00003 PB EQU 0x06
+  00000003            00004 st EQU 0x03
+                      00005 
+Warning[205]: Found directive in column 1. (ORG)
+                      00006 ORG 0x000
+                      00007 
+0000                  00008 inicio
+0000   1683           00009         bsf st,5
+0001   300F           00010         movlw 0x0F
+0002   0086           00011         movwf PB
+0003   1283           00012         bcf st,5
+0004   0186           00013         clrf PB
+0005                  00014 bucle
+0005   1C06           00015         btfss PB,0
+0006   2???           00016         goto apagaB4
+0007   1606           00017         bsf PB,4
+0008                  00018 cont
+0008   1C86           00019         btfss PB,1
+0009   2???           00020         goto apagaB5
+000A   1686           00021         bsf PB,5
+000B   2???           00022         goto bucle
+000C                  00023 apagaB4
+000C   1206           00024         bcf PB,4
+000D   2???           00025         goto cont
+000E                  00026 apagaB5
+000E   1286           00027         bcf PB,5
+000F   2???           00028         goto bucle
+Warning[205]: Found directive in column 1. (end)
+                      00029 end
+MPASM  5.51                        CODIGO.ASM   11-29-2020  16:35:57         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PB                                00000006
+__16F88                           00000001
+__DEBUG                           1
+apagaB4                           0000000C
+apagaB5                           0000000E
+bucle                             00000005
+cont                              00000008
+inicio                            00000000
+st                                00000003
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

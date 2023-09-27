@@ -1,0 +1,60 @@
+MPASM  5.51                   EJERCICIO12.ASM   10-19-2020  11:41:00         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16f88
+                      00002 
+  00000005            00003 PA EQU 0x05
+  00000006            00004 PB EQU 0x06
+  00000003            00005 status EQU 0x03
+                      00006 
+Warning[205]: Found directive in column 1. (ORG)
+                      00007 ORG 0x000
+                      00008 
+0000                  00009 inicio
+0000   1683           00010         bsf status,5
+0001   3080           00011         movlw 0x80 ;Para que funcione hay que poner el registro ANSEL en 0x00
+                      00012                            ;para que sea la entrada digital
+0002   009B           00013         movwf 0x1B ;Registro ANSEL es el 9B, como el banco seleccionado es el 1
+                      00014                            ;entonces ponemos el registro 1B
+0003   30FF           00015         movlw 0xFF
+0004   0085           00016         movwf PA
+0005   0186           00017         clrf PB
+0006   1283           00018         bcf status,5
+0007   0185           00019         clrf PA
+0008   0186           00020         clrf PB
+0009                  00021 bucle 
+0009   1C05           00022         BTFSS PA,0
+000A   2???           00023         goto apagar
+000B   1C85           00024         BTFSS PA,1
+000C   2???           00025         goto apagar
+000D   1406           00026         bsf PB,0
+000E   2???           00027         goto bucle
+000F                  00028 apagar
+000F   1006           00029         bcf PB,0
+0010   2???           00030         goto bucle
+Warning[205]: Found directive in column 1. (end)
+                      00031 end
+MPASM  5.51                   EJERCICIO12.ASM   10-19-2020  11:41:00         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PA                                00000005
+PB                                00000006
+__16F88                           00000001
+__DEBUG                           1
+apagar                            0000000F
+bucle                             00000009
+inicio                            00000000
+status                            00000003
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

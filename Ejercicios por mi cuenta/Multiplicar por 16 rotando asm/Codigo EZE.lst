@@ -1,0 +1,44 @@
+MPASM  5.51                    CODIGO EZE.ASM   11-30-2020  10:40:30         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16F88
+                      00002 
+  00000020            00003 var EQU 0x20
+  00000021            00004 multi EQU 0x21
+                      00005 
+Warning[205]: Found directive in column 1. (ORG)
+                      00006 ORG 0x000
+                      00007 
+0000                  00008 inicio
+0000   3002           00009         movlw d'2'
+0001   00A0           00010         movwf var
+0002   3004           00011         movlw d'4'
+0003   00A1           00012         movwf multi
+0004                  00013 bucle
+0004   0DA0           00014         rlf var,1
+Message[305]: Using default destination of 1 (file).
+0005   0BA1           00015         decfsz multi
+0006   2???           00016         goto bucle
+                      00017         end
+MPASM  5.51                    CODIGO EZE.ASM   11-30-2020  10:40:30         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F88                           00000001
+__DEBUG                           1
+bucle                             00000004
+inicio                            00000000
+multi                             00000021
+var                               00000020
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

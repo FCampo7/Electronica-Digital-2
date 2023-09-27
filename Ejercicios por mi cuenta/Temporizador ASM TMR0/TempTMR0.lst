@@ -1,0 +1,71 @@
+MPASM  5.51                      TEMPTMR0.ASM   9-22-2020  10:20:31         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16f88
+                      00002 
+  00000001            00003 tmr0_option EQU 0x01
+  0000000B            00004 intcon EQU 0x0B
+  00000006            00005 pb_trisb EQU 0x06
+  00000003            00006 status EQU 0x03
+  00000002            00007 toif EQU 2
+                      00008 
+Warning[205]: Found directive in column 1. (ORG)
+                      00009 ORG 0000
+Warning[203]: Found opcode in column 1. (goto)
+0000   2???           00010 goto inicializa
+Warning[205]: Found directive in column 1. (ORG)
+                      00011 ORG 0004
+Warning[203]: Found opcode in column 1. (goto)
+0004   2???           00012 goto rsi
+                      00013 
+0005                  00014 inicializa
+0005   1683           00015         bsf status,5
+0006   1303           00016         bcf status,6
+0007   30C7           00017         movlw b'11000111'
+0008   0081           00018         movwf tmr0_option
+0009   0186           00019         clrf pb_trisb
+000A   1283           00020         bcf status,5
+000B   1303           00021         bcf status,6
+000C   30A0           00022         movlw b'10100000'
+000D   008B           00023         movwf intcon
+000E   0186           00024         clrf pb_trisb
+000F   0181           00025         clrf tmr0_option
+0010                  00026 circulo
+0010   2???           00027         goto circulo
+                      00028 
+0011                  00029 rsi
+0011   1D0B           00030         btfss intcon,toif
+0012   0009           00031         retfie
+0013   110B           00032         bcf intcon,toif
+0014   3080           00033         movlw b'10000000'
+0015   0686           00034         xorwf pb_trisb,1
+0016   0181           00035         clrf tmr0_option
+0017   0009           00036         retfie
+Warning[205]: Found directive in column 1. (end)
+                      00037 end
+MPASM  5.51                      TEMPTMR0.ASM   9-22-2020  10:20:31         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F88                           00000001
+__DEBUG                           1
+circulo                           00000010
+inicializa                        00000005
+intcon                            0000000B
+pb_trisb                          00000006
+rsi                               00000011
+status                            00000003
+tmr0_option                       00000001
+toif                              00000002
+
+Errors   :     0
+Warnings :     6 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

@@ -1,0 +1,49 @@
+MPASM  5.51                        CODIGO.ASM   11-29-2020  16:27:27         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16F88
+                      00002 
+  00000006            00003 PB EQU 0x06
+  00000003            00004 status EQU 0x03
+  0000009B            00005 ansel EQU 0x9B
+                      00006 
+Warning[205]: Found directive in column 1. (ORG)
+                      00007 ORG 0x000
+                      00008 
+0000                  00009 inicio
+0000   1683           00010         bsf status,5
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0001   019B           00011         clrf ansel ;Seteamos los puertos como digitales
+0002   30F0           00012         movlw b'11110000'
+0003   0086           00013         movwf PB
+0004   1283           00014         bcf status,5
+0005   0186           00015         clrf PB
+0006                  00016 bucle
+0006   3003           00017         movlw b'00000011'
+0007   0086           00018         movwf PB
+0008   2???           00019         goto bucle
+Warning[205]: Found directive in column 1. (end)
+                      00020 end
+MPASM  5.51                        CODIGO.ASM   11-29-2020  16:27:27         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PB                                00000006
+__16F88                           00000001
+__DEBUG                           1
+ansel                             0000009B
+bucle                             00000006
+inicio                            00000000
+status                            00000003
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

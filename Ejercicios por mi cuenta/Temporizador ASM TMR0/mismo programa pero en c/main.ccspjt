@@ -1,0 +1,55 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Temporizador ASM TMR0\mismo programa pero en c\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=22-09-2020
+D1_L=6
+D1_L1=[37572]Project Opened.
+D1_L2=[37580]Started Editing.
+D1_L3=[38401]Stopped Editing.
+D1_L4=[38783]Started Editing.
+D1_L5=[39084]Stopped Editing.
+TotalEdit=11
+TotalDebug=0
+D1_E=9
+D1_D=0
+D1_L6=[39932]Project Closed.
+D2=29-11-2020
+D2_L=6
+D2_L1=[63934]Project Opened.
+D2_L2=[64199]Started Editing.
+D2_L3=[64549]Stopped Editing.
+D2_L4=[64990]Started Editing.
+D2_L5=[65001]Stopped Editing.
+D2_E=2
+D2_D=0
+D2_L6=[65001]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=3
+[Units]
+Count=1
+1=main (main)

@@ -1,0 +1,89 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Ejemplo 2\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=3
+D1=29-09-2020
+D1_L=6
+D1_L1=[54796]Project Opened.
+D1_L2=[54809]Started Editing.
+D1_L3=[55232]Stopped Editing.
+D1_L4=[55645]Started Editing.
+D1_L5=[55949]Stopped Editing.
+TotalEdit=40
+TotalDebug=0
+D1_E=3
+D1_D=0
+D1_L6=[56375]Project Closed.
+D2=27-11-2020
+D2_L=26
+D2_L1=[46327]Project Opened.
+D2_L2=[46350]Started Editing.
+D2_L3=[47347]Stopped Editing.
+D2_L4=[47354]Started Editing.
+D2_L5=[47922]Stopped Editing.
+D2_L6=[47937]Started Editing.
+D2_L7=[47954]Stopped Editing.
+D2_E=30
+D2_D=0
+D2_L8=[47954]Project Closed.
+D2_L9=[56798]Project Opened.
+D2_L10=[56870]Started Editing.
+D2_L11=[57241]Stopped Editing.
+D2_L12=[57618]Started Editing.
+D2_L13=[58372]Stopped Editing.
+D2_L14=[58585]Started Editing.
+D2_L15=[58885]Stopped Editing.
+D2_L16=[61067]Started Editing.
+D2_L17=[61429]Stopped Editing.
+D2_L18=[61728]Started Editing.
+D2_L19=[62063]Stopped Editing.
+D2_L20=[62411]Started Editing.
+D2_L21=[62712]Stopped Editing.
+D2_L22=[63042]Started Editing.
+D2_L23=[63440]Stopped Editing.
+D2_L24=[64067]Started Editing.
+D2_L25=[64098]Stopped Editing.
+D2_L26=[64098]Project Closed.
+D3=28-11-2020
+D3_L=10
+D3_L1=[37831]Project Opened.
+D3_L2=[38207]Started Editing.
+D3_L3=[38517]Stopped Editing.
+D3_L4=[38764]Started Editing.
+D3_L5=[38881]Stopped Editing.
+D3_E=7
+D3_D=0
+D3_L6=[38881]Project Closed.
+D3_L7=[43616]Project Opened.
+D3_L8=[43629]Started Editing.
+D3_L9=[43833]Stopped Editing.
+D3_L10=[43833]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=34
+[Units]
+Count=1
+1=main (main)

@@ -1,0 +1,5 @@
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Problema 1\Problema 1 on 10-oct.-20 at 11:54
+>>> Warning 203 "Problema 1.c" Line 41(1,1): Condition always TRUE
+      Memory usage:   ROM=3%      RAM=4% - 4%
+      0 Errors,  1 Warnings.
+Build Successful.

@@ -1,0 +1,55 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[D:\Ezequiel\My eBooks\Favaloro\ED\II\TP3\EX4\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=13-10-2020
+D1_L=12
+D1_L1=[53132]Project Opened.
+D1_L2=[55237]Started Editing.
+D1_L3=[55715]Stopped Editing.
+D1_L4=[55792]Started Editing.
+D1_L5=[56190]Stopped Editing.
+D1_L6=[56440]Started Editing.
+D1_L7=[56518]Stopped Editing.
+TotalEdit=11
+TotalDebug=0
+D1_E=11
+D1_D=0
+D1_L8=[56518]Project Closed.
+D1_L9=[57173]Project Opened.
+D1_L10=[57178]Started Editing.
+D1_L11=[57433]Stopped Editing.
+D1_L12=[57433]Project Closed.
+D2=14-10-2020
+D2_L=2
+D2_L1=[41928]Project Opened.
+D2_L2=[41982]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=10
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=9
+[Units]
+Count=1
+1=main (main)

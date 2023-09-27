@@ -1,0 +1,40 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Sun Nov 29 16:35:58 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000020
+                   .cinit    romdata   0x000010    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000011      
+            18 out of 4359 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  apagaB4   0x00000c    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                  apagaB5   0x00000e    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                    bucle   0x000005    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                     cont   0x000008    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                    bucle   0x000005    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                     cont   0x000008    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                  apagaB4   0x00000c    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+                  apagaB5   0x00000e    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 11 guia 1\Codigo.asm
+
+

@@ -1,0 +1,48 @@
+MPASM  5.51                          SUMA.ASM   8-25-2020  16:18:34         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;PRIMERO.ASM: Este programa suma el contenido de las posiciones 0x0c y 0x0d
+                      00002 ;de memoria y almacena el resultado en la posicion 0x0e.
+                      00003 
+                      00004         LIST p=16f88 ;Indica el modelo PIC que se usa Es una directiva del ensamblador.
+                      00005 ;-----------------------------
+                      00006 ;Zona para etiquetas.
+                      00007         
+Warning[207]: Found label after column 1. (OPERANDO1)
+  0000000C            00008         OPERANDO1 EQU 0x0c      ;Define la posicion del operando1.
+Warning[207]: Found label after column 1. (OPERANDO2)
+  0000000D            00009         OPERANDO2 EQU 0x0d      ;Define la posicion del operando2.
+Warning[207]: Found label after column 1. (RESULTADO)
+  0000000E            00010         RESULTADO EQU 0x0e      ;
+                      00011         
+                      00012                         ORG 0x000 ;Comando que indica al ensamblador la direccion de la memoria de progr
+                            ama donde situar la siguiente instruccion.
+                      00013 
+0000   3005           00014                         movlw 0x05
+0001   008C           00015                         movwf OPERANDO1
+0002   3002           00016                         movlw 0x02
+0003   008D           00017                         movwf OPERANDO2
+0004   080C           00018                         movfw OPERANDO1
+0005   070D           00019                         addwf OPERANDO2,0
+0006   008E           00020                         movwf RESULTADO
+                      00021                         end
+MPASM  5.51                          SUMA.ASM   8-25-2020  16:18:34         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+OPERANDO1                         0000000C
+OPERANDO2                         0000000D
+RESULTADO                         0000000E
+__16F88                           00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     3 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

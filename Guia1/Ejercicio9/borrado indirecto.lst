@@ -1,0 +1,62 @@
+MPASM  5.51             BORRADO INDIRECTO.ASM   9-8-2020  16:08:54         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16f88
+                      00002 
+  00000000            00003 indf EQU 0x00
+  00000004            00004 fsr EQU 0x04
+  00000041            00005 corte EQU 0x41
+                      00006 
+Warning[205]: Found directive in column 1. (ORG)
+                      00007 ORG 0x000
+                      00008 
+0000                  00009 inicio:
+0000   3010           00010         movlw 0x10
+0001   00A9           00011         movwf 0x29
+0002   00C0           00012         movwf 0x40
+0003   3001           00013         movlw 0x01
+0004   00C1           00014         movwf corte
+0005   3020           00015         movlw 0x20
+0006   0084           00016         movwf fsr
+0007   0080           00017         movwf indf
+0008                  00018 bucle:
+0008   1AC1           00019         btfsc corte,5
+0009   2???           00020         goto comp2
+000A                  00021 bucle2:
+000A   0180           00022         clrf indf
+Message[305]: Using default destination of 1 (file).
+000B   0A84           00023         incf fsr
+000C   0AC1           00024         incf corte,1
+000D   2???           00025         goto bucle
+000E                  00026 comp2:
+000E   18C1           00027         btfsc corte,1
+000F   2???           00028         goto fin
+0010   2???           00029         goto bucle2
+0011                  00030 fin:
+                      00031         end
+MPASM  5.51             BORRADO INDIRECTO.ASM   9-8-2020  16:08:54         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F88                           00000001
+__DEBUG                           1
+bucle                             00000008
+bucle2                            0000000A
+comp2                             0000000E
+corte                             00000041
+fin                               00000011
+fsr                               00000004
+indf                              00000000
+inicio                            00000000
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

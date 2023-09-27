@@ -1,0 +1,55 @@
+MPASM  5.51                        CODIGO.ASM   11-30-2020  18:34:28         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16f88
+                      00002 
+  00000000            00003 indf EQU 0x00
+  00000004            00004 fsr EQU 0x04
+  00000020            00005 var EQU 0x20
+  00000021            00006 nRot EQU 0x21
+                      00007 
+Warning[205]: Found directive in column 1. (ORG)
+                      00008 ORG 0x000
+                      00009 
+0000                  00010 inicio
+0000   3002           00011         movlw 0x02
+0001   00A0           00012         movwf var
+0002   3003           00013         movlw 0x03
+0003   00A1           00014         movwf nRot
+0004   3022           00015         movlw 0x22
+0005   0084           00016         movwf fsr
+                      00017 
+0006                  00018 bucle
+0006   0D20           00019         rlf var,0
+0007   00A0           00020         movwf var
+0008   0080           00021         movwf indf
+Message[305]: Using default destination of 1 (file).
+0009   0A84           00022         incf fsr
+Message[305]: Using default destination of 1 (file).
+000A   0BA1           00023         decfsz nRot
+000B   2???           00024         goto bucle
+                      00025         end
+MPASM  5.51                        CODIGO.ASM   11-30-2020  18:34:28         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F88                           00000001
+__DEBUG                           1
+bucle                             00000006
+fsr                               00000004
+indf                              00000000
+inicio                            00000000
+nRot                              00000021
+var                               00000020
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

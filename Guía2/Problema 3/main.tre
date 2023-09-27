@@ -1,0 +1,6 @@
+青main
+   青MAIN  0/42  Ram=1
+      団@cinit1  (Inline)  Ram=0
+      青intermitenciaPA  0/53  Ram=4
+         団@delay_ms1  0/21  Ram=1
+         青@delay_ms1  0/21  Ram=1

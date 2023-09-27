@@ -1,0 +1,50 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Mon Nov 30 10:14:25 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000076
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x00003e      
+            62 out of 4359 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    bucle   0x00003a    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+          bucle_delay50ms   0x000021    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+         bucle_delay600ms   0x00001a    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+               delay_50ms   0x00001e    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+              delay_600ms   0x000018    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                  ext_int   0x000025    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                   inicio   0x000029    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                 tmr0_int   0x000013    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                tmr0_int2   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                tmr0_int2   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                 tmr0_int   0x000013    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+              delay_600ms   0x000018    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+         bucle_delay600ms   0x00001a    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+               delay_50ms   0x00001e    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+          bucle_delay50ms   0x000021    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                  ext_int   0x000025    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                   inicio   0x000029    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+                    bucle   0x00003a    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\LED temporizador 2\Codigo.asm
+
+

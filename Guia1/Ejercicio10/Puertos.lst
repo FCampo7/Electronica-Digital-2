@@ -1,0 +1,44 @@
+MPASM  5.51                       PUERTOS.ASM   10-19-2020  12:04:26         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16F88
+                      00002 
+  00000006            00003 PB EQU 0x06
+  00000003            00004 status EQU 0x03
+                      00005 
+Warning[205]: Found directive in column 1. (ORG)
+                      00006 ORG 0x000
+                      00007 
+0000                  00008 inicio:
+0000   1683           00009         bsf status,5
+0001   30F0           00010         movlw 0xf0  ; Seteamos la parte alta del PB como entrada y la parte baja como salida
+0002   0086           00011         movwf PB
+0003   1283           00012         bcf status,5
+0004   0186           00013         clrf PB ; apagamos todos los puertos;
+0005                  00014 bucle:
+0005   1406           00015         bsf PB,0 ; Prendemos el b0 y b1
+0006   1486           00016         bsf PB,1
+0007   2???           00017         goto bucle
+                      00018         end
+MPASM  5.51                       PUERTOS.ASM   10-19-2020  12:04:26         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PB                                00000006
+__16F88                           00000001
+__DEBUG                           1
+bucle                             00000005
+inicio                            00000000
+status                            00000003
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

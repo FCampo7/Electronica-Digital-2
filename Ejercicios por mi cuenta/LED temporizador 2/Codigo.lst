@@ -1,0 +1,155 @@
+MPASM  5.51                        CODIGO.ASM   11-30-2020  10:14:24         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 
+                      00002 ;Manejo de dos interrupciones a la vez TMR0 y INT_EXT
+                      00003 
+Warning[205]: Found directive in column 1. (LIST)
+                      00004 LIST p=16f88
+                      00005 
+  00000005            00006 PA EQU 0x05
+  00000006            00007 PB EQU 0x06
+  00000003            00008 st EQU 0x03 ;Controla el registro status
+  00000001            00009 TMR0 EQU 0x01 ;Controla el registro tmr0 y option
+  0000000B            00010 INTCON EQU 0x0B ;Controla el registro INTCON
+  0000009B            00011 ansel EQU 0x9B ;Controla el registro analogico
+  00000020            00012 ciclos EQU 0x20 ;Almacenamos los ciclos
+                      00013 
+Warning[205]: Found directive in column 1. (ORG)
+                      00014 ORG 0x000
+                      00015 
+Warning[203]: Found opcode in column 1. (goto)
+0000   2???           00016 goto inicio ;Arrancamos en inicio
+                      00017 
+Warning[205]: Found directive in column 1. (ORG)
+                      00018 ORG 0x004
+                      00019 
+Warning[203]: Found opcode in column 1. (btfsc)
+0004   190B           00020 btfsc INTCON,2 ;INTCON2==1 vamos a la rutina tmr0_int
+Warning[203]: Found opcode in column 1. (goto)
+0005   2???           00021 goto tmr0_int2
+Warning[203]: Found opcode in column 1. (btfsc)
+0006   188B           00022 btfsc INTCON,1 ;INTCON1==1 vamos a la rutina ext_int
+Warning[203]: Found opcode in column 1. (goto)
+0007   2???           00023 goto ext_int
+Warning[203]: Found opcode in column 1. (retfie)
+0008   0009           00024 retfie ;Por las dudas retornamos de la interrupcion
+                      00025 
+0009                  00026 tmr0_int2
+0009   110B           00027         bcf INTCON,2
+000A   303D           00028         movlw d'61'
+000B   0081           00029         movwf TMR0
+Message[305]: Using default destination of 1 (file).
+000C   0BA0           00030         decfsz ciclos
+000D   0009           00031         retfie
+000E   300A           00032         movlw d'10'
+000F   00A0           00033         movwf ciclos
+0010   3002           00034         movlw b'00000010'
+Message[305]: Using default destination of 1 (file).
+0011   0686           00035         xorwf PB
+0012   0009           00036         retfie
+                      00037 
+0013                  00038 tmr0_int ;Rutina de la interrupcion del tmr0
+0013   2???           00039         call delay_600ms
+0014   1486           00040         bsf PB,1
+0015   2???           00041         call delay_600ms
+0016   1086           00042         bcf PB,1
+MPASM  5.51                        CODIGO.ASM   11-30-2020  10:14:24         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0017   0009           00043         retfie
+0018                  00044 delay_600ms
+0018   300A           00045         movlw d'10'
+0019   00A0           00046         movwf ciclos
+001A                  00047 bucle_delay600ms
+001A   2???           00048         call delay_50ms
+Message[305]: Using default destination of 1 (file).
+001B   0BA0           00049         decfsz ciclos
+001C   2???           00050         goto bucle_delay600ms
+001D   0008           00051         return
+001E                  00052 delay_50ms
+001E   110B           00053         bcf INTCON,2
+001F   303D           00054         movlw d'61'
+0020   0081           00055         movwf TMR0
+0021                  00056 bucle_delay50ms
+0021   1D0B           00057         btfss INTCON,2
+0022   2???           00058         goto bucle_delay50ms
+0023   110B           00059         bcf INTCON,2
+0024   0008           00060         return
+                      00061 
+0025                  00062 ext_int ;Rutina de la interrupcion externa del RB0
+0025   3004           00063         movlw b'00000100'
+Message[305]: Using default destination of 1 (file).
+0026   0686           00064         xorwf PB ;Prende apaga el pin
+0027   108B           00065         bcf INTCON,1
+0028   0009           00066         retfie
+                      00067 
+0029                  00068 inicio ;Seteo del pic
+0029   1683           00069         bsf st,5 ;Banco 1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+002A   019B           00070         clrf ansel ;Seteamos los pines como digitales
+002B   30FF           00071         movlw 0xFF
+002C   0085           00072         movwf PA
+002D   3001           00073         movlw 0x01
+002E   0086           00074         movwf PB
+002F   3017           00075         movlw b'00010111' ;RBPU=ACT, INTEDG=HTOL, T0CS=INTERNAL, T0SE=HTOL, PSA=TMR0, PS<0-2>=256
+0030   0081           00076         movwf TMR0
+0031   178B           00077         bsf INTCON,7 ;int globales act
+0032   168B           00078         bsf INTCON,5 ;int tmr0 act
+0033   160B           00079         bsf INTCON,4 ;int RB0 act
+0034   110B           00080         bcf INTCON,2 ;flag TMR0 CLEAR
+0035   108B           00081         bcf     INTCON,1 ;flar RB0 CLEAR
+0036   1283           00082         bcf st,5 ;Banco 0
+0037   0186           00083         clrf PB ;Limpiamos PB
+0038   300A           00084         movlw d'10'
+0039   00A0           00085         movwf ciclos
+003A                  00086 bucle ;Programa principal
+003A   1C05           00087         btfss PA,0
+003B   1186           00088         bcf PB,3
+003C   1805           00089         btfsc PA,0
+003D   1586           00090         bsf PB,3
+003E   2???           00091         goto bucle
+Warning[205]: Found directive in column 1. (end)
+MPASM  5.51                        CODIGO.ASM   11-30-2020  10:14:24         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00092 end
+MPASM  5.51                        CODIGO.ASM   11-30-2020  10:14:24         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+INTCON                            0000000B
+PA                                00000005
+PB                                00000006
+TMR0                              00000001
+__16F88                           00000001
+__DEBUG                           1
+ansel                             0000009B
+bucle                             0000003A
+bucle_delay50ms                   00000021
+bucle_delay600ms                  0000001A
+ciclos                            00000020
+delay_50ms                        0000001E
+delay_600ms                       00000018
+ext_int                           00000025
+inicio                            00000029
+st                                00000003
+tmr0_int                          00000013
+tmr0_int2                         00000009
+
+Errors   :     0
+Warnings :    10 reported,     0 suppressed
+Messages :     5 reported,     0 suppressed
+
+

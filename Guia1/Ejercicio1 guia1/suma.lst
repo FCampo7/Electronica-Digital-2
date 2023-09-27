@@ -1,0 +1,49 @@
+MPASM  5.51                          SUMA.ASM   9-2-2020  19:15:08         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST P=16F88
+                      00002 
+  0000000B            00003 OP1 EQU 0x0b
+  0000000C            00004 OP2 EQU 0x0c
+  0000000E            00005 RESUL EQU 0x0e
+                      00006 
+Warning[205]: Found directive in column 1. (ORG)
+                      00007 ORG 0x000
+                      00008 
+Warning[203]: Found opcode in column 1. (movlw)
+0000   3005           00009 movlw 0x05
+Warning[203]: Found opcode in column 1. (movwf)
+0001   008B           00010 movwf OP1
+Warning[203]: Found opcode in column 1. (movlw)
+0002   3003           00011 movlw 0x03
+Warning[203]: Found opcode in column 1. (movwf)
+0003   008C           00012 movwf OP2
+Warning[204]: Found pseudo-op in column 1. (movfw)
+0004   080B           00013 movfw OP1
+Warning[203]: Found opcode in column 1. (addwf)
+0005   070C           00014 addwf OP2,0
+Warning[203]: Found opcode in column 1. (movwf)
+0006   008E           00015 movwf RESUL
+Warning[205]: Found directive in column 1. (end)
+                      00016 end
+MPASM  5.51                          SUMA.ASM   9-2-2020  19:15:08         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+OP1                               0000000B
+OP2                               0000000C
+RESUL                             0000000E
+__16F88                           00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :    10 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

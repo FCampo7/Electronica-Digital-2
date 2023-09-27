@@ -1,0 +1,38 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Sun Nov 29 16:54:26 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00001a
+                   .cinit    romdata   0x00000d    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00000e      
+            15 out of 4359 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   apagar   0x000007    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+                    bucle   0x000005    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+                comprobar   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+                    bucle   0x000005    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+                   apagar   0x000007    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+                comprobar   0x000009    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Problema 12 guia 1\Codigo.asm
+
+

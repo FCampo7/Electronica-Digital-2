@@ -1,0 +1,189 @@
+CCS PCM C Compiler, Version 5.076, 56587               13-oct.-20 15:51
+
+               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Problema 3\main.lst
+
+               ROM used:   106 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   14 (4%) at main() level
+                           14 (4%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   04B
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   7F,W
+0009:  MOVWF  20
+000A:  MOVF   0A,W
+000B:  MOVWF  27
+000C:  CLRF   0A
+000D:  SWAPF  20,F
+000E:  MOVF   04,W
+000F:  MOVWF  22
+0010:  MOVF   77,W
+0011:  MOVWF  23
+0012:  MOVF   78,W
+0013:  MOVWF  24
+0014:  MOVF   79,W
+0015:  MOVWF  25
+0016:  MOVF   7A,W
+0017:  MOVWF  26
+0018:  BCF    03.7
+0019:  BCF    03.5
+001A:  BTFSS  0B.3
+001B:  GOTO   01E
+001C:  BTFSC  0B.0
+001D:  GOTO   033
+001E:  BTFSS  0B.5
+001F:  GOTO   022
+0020:  BTFSC  0B.2
+0021:  GOTO   035
+0022:  MOVF   22,W
+0023:  MOVWF  04
+0024:  MOVF   23,W
+0025:  MOVWF  77
+0026:  MOVF   24,W
+0027:  MOVWF  78
+0028:  MOVF   25,W
+0029:  MOVWF  79
+002A:  MOVF   26,W
+002B:  MOVWF  7A
+002C:  MOVF   27,W
+002D:  MOVWF  0A
+002E:  SWAPF  21,W
+002F:  MOVWF  03
+0030:  SWAPF  7F,F
+0031:  SWAPF  7F,W
+0032:  RETFIE
+0033:  BCF    0A.3
+0034:  GOTO   042
+0035:  BCF    0A.3
+0036:  GOTO   037
+.................... /* 
+.................... Realice una rutina que al leer una entrada por algún pin del RB4 al RB7, 
+.................... mantenga prendido un led por 500ms en el pin RB2. 
+.................... */ 
+....................  
+.................... #include <main.h> 
+.................... #include <16F88.h> 
+.................... //////////// Standard Header file for the PIC16F88 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F88 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #use delay(crystal=4000000) 
+....................  
+....................  
+....................  
+.................... #BYTE PORTB=0x06 
+.................... #BYTE TRISB=0x86 
+....................  
+.................... #BIT RB2=PORTB.2 //Definimos RB2 como el pin 2 del puerto B 
+....................  
+.................... #define TMR0 0x40 //64 En hexa 
+....................  
+.................... int cont=10; //Contador para saber cuantos ciclos del timer de 50ms van hechos para llegar a los 500ms 
+....................  
+.................... #INT_TIMER0 
+.................... void TIMER0_isr(){ 
+.................... 	cont--; //Decrementamos para saber que ya paso un ciclo de 50ms 
+0037:  DECFSZ 28,F
+.................... 	if(cont<=0){ //Revisamos si se cumplen los 500ms 
+0038:  GOTO   03D
+.................... 		RB2=0; //Ponemos en 0 el estado del pin B2 para que se apague el led 
+0039:  BCF    06.2
+.................... 		cont=10; //Reseteamos el contador, por las dudas 
+003A:  MOVLW  0A
+003B:  MOVWF  28
+.................... 		disable_interrupts(INT_TIMER0); //Deshabilitamos las interrupciones en el timer0 para que no siga entrando despues de los 500ms 
+003C:  BCF    0B.5
+.................... 	} 
+.................... 	set_timer0(TMR0); //Seteamos el timer0 con el valor de 64 que es aproximadamente 50ms 
+003D:  MOVLW  40
+003E:  MOVWF  01
+.................... } 
+....................  
+003F:  BCF    0B.2
+0040:  BCF    0A.3
+0041:  GOTO   022
+.................... #INT_RB 
+.................... void RB_isr(){ 
+.................... 	RB2=1; //Ponemos en 1 el estado del pin B2 para que se prenda el led 
+0042:  BSF    06.2
+.................... 	cont=10; //Inicializamos el contador en 10 para que haga (10 ciclos de 50ms) = 500ms 
+0043:  MOVLW  0A
+0044:  MOVWF  28
+.................... 	set_timer0(TMR0); //Seteamos el timer0 con el valor de 64 que es aproximadamente 50ms 
+0045:  MOVLW  40
+0046:  MOVWF  01
+.................... 	enable_interrupts(INT_TIMER0); //Habilitamos las interrupciones del timer0 para que empiece a contar 
+0047:  BSF    0B.5
+0048:  BCF    0B.0
+0049:  BCF    0A.3
+004A:  GOTO   022
+.................... } 
+....................  
+.................... void main() 
+004B:  MOVF   03,W
+004C:  ANDLW  1F
+004D:  MOVWF  03
+004E:  MOVLW  0A
+004F:  MOVWF  28
+0050:  BSF    03.5
+0051:  BCF    1F.4
+0052:  BCF    1F.5
+0053:  MOVF   1B,W
+0054:  ANDLW  80
+0055:  MOVWF  1B
+0056:  MOVLW  07
+0057:  MOVWF  1C
+0058:  BCF    03.7
+.................... { 
+.................... 	TRISB=0xF0; //Seteamos la parte alta del puerto B como entrada y la baja como salida 
+0059:  MOVLW  F0
+005A:  MOVWF  06
+.................... 	PORTB=0x00; //Setemaos todos los pines del puerto B con 0; 
+005B:  BCF    03.5
+005C:  CLRF   06
+....................   	 
+.................... 	setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256); //seteamos el timer 0 como interno y con un prescaler de 256 
+005D:  BSF    03.5
+005E:  MOVF   01,W
+005F:  ANDLW  C0
+0060:  IORLW  07
+0061:  MOVWF  01
+.................... 	set_timer0(TMR0); //seteamos el timer0 con el valor de 64 que es aproximadamente 50ms 
+0062:  MOVLW  40
+0063:  BCF    03.5
+0064:  MOVWF  01
+.................... 	enable_interrupts(INT_RB); //habilitamos las interrupciones de los pines B7:B4 
+0065:  BSF    0B.3
+.................... 	enable_interrupts(GLOBAL); //Habilitamos las interrupciones globales 
+0066:  MOVLW  C0
+0067:  IORWF  0B,F
+....................  
+.................... 	while(TRUE); 
+0068:  GOTO   068
+....................  
+.................... } 
+0069:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F61   NOWDT PUT XT MCLR BROWNOUT NOLVP NOCPD NOWRT NODEBUG CCPB0 NOPROTECT
+   Word  2: 3FFF   FCMEN IESO

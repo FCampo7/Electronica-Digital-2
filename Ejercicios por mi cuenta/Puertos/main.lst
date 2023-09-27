@@ -1,0 +1,104 @@
+CCS PCM C Compiler, Version 5.076, 56587               20-sep.-20 20:56
+
+               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Ejercicios por mi cuenta\Puertos\main.lst
+
+               ROM used:   36 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           6 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   004
+0003:  NOP
+.................... #include <main.h> 
+.................... #include <16F88.h> 
+.................... //////////// Standard Header file for the PIC16F88 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F88 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #use delay(crystal=4MHz) 
+....................  
+....................  
+....................  
+.................... #BYTE TRISA=0x85 
+.................... #BYTE PORTA=0x05 
+.................... #BYTE TRISB=0x86 
+.................... #BYTE PORTB=0x06 
+.................... #BIT RA1=PORTA.1 
+.................... #BIT RA2=PORTA.2 
+.................... #BIT RB1=PORTB.1 
+.................... #BIT RB2=PORTB.2 
+....................  
+.................... void main() 
+0004:  MOVF   03,W
+0005:  ANDLW  1F
+0006:  MOVWF  03
+0007:  BSF    03.5
+0008:  BCF    1F.4
+0009:  BCF    1F.5
+000A:  MOVF   1B,W
+000B:  ANDLW  80
+000C:  MOVWF  1B
+000D:  MOVLW  07
+000E:  MOVWF  1C
+000F:  BCF    03.7
+.................... { 
+....................  
+....................    TRISA=0xFF; 
+0010:  MOVLW  FF
+0011:  MOVWF  05
+....................    PORTA=0x00; 
+0012:  BCF    03.5
+0013:  CLRF   05
+....................    TRISB=0x00; 
+0014:  BSF    03.5
+0015:  CLRF   06
+....................    PORTB=0x00; 
+0016:  BCF    03.5
+0017:  CLRF   06
+....................  
+....................    while(TRUE) 
+....................    { 
+....................       if(bit_test(PORTA, 1)==1) 
+0018:  BTFSS  05.1
+0019:  GOTO   01C
+....................          RB1=1; 
+001A:  BSF    06.1
+001B:  GOTO   01D
+....................       else 
+....................          RB1=0; 
+001C:  BCF    06.1
+....................       if(bit_test(PORTA, 2)==1) 
+001D:  BTFSS  05.2
+001E:  GOTO   021
+....................          RB2=1; 
+001F:  BSF    06.2
+0020:  GOTO   022
+....................       else 
+....................          RB2=0; 
+0021:  BCF    06.2
+0022:  GOTO   018
+....................       //TODO: User Code 
+....................    } 
+....................  
+.................... } 
+0023:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F61   NOWDT PUT XT MCLR BROWNOUT NOLVP NOCPD NOWRT NODEBUG CCPB0 NOPROTECT
+   Word  2: 3FFF   FCMEN IESO

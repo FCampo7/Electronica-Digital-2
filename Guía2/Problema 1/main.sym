@@ -1,0 +1,58 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+006     PORTB
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086     TRISB
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+00000F  @cinit2
+
+Project Directory:
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guía2\Problema 1\
+
+Project Files:
+    main.c                                                  [22-sep.-20 15:19  CRC=D872A938]
+    main.h                                                  [15-sep.-20 14:58  CRC=00000000]
+    D:\Program Files\PICC\Devices\16F88.h                   [15-ene.-18 15:52  CRC=641C4ACB]
+
+Source signature=A0AB3ECE
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=DBFA
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

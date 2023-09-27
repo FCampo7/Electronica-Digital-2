@@ -1,0 +1,51 @@
+MPASM  5.51                MULTIPLICACION.ASM   10-21-2020  15:49:51         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16f88
+                      00002 
+  00000021            00003 corte EQU 0x21
+  00000022            00004 var EQU 0x22
+  00000023            00005 resultado EQU 0x23
+                      00006 
+Warning[205]: Found directive in column 1. (ORG)
+                      00007 ORG 0x000
+                      00008 
+0000                  00009 inicio:
+0000   3001           00010         movlw 0x01
+0001   00A1           00011         movwf corte
+0002   3002           00012         movlw 0x02
+0003   00A2           00013         movwf var
+0004   00A3           00014         movwf resultado
+0005                  00015 bucle:
+0005   1A21           00016         btfsc corte,4
+0006   2???           00017         goto fin
+0007   0DA3           00018         rlf resultado,1
+0008   1023           00019         bcf resultado,0
+0009   0DA1           00020         rlf corte,1
+000A   2???           00021         goto bucle
+000B                  00022 fin:
+                      00023         end
+MPASM  5.51                MULTIPLICACION.ASM   10-21-2020  15:49:51         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F88                           00000001
+__DEBUG                           1
+bucle                             00000005
+corte                             00000021
+fin                               0000000B
+inicio                            00000000
+resultado                         00000023
+var                               00000022
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

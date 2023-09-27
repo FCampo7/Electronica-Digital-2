@@ -1,0 +1,38 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Wed Oct 21 16:01:31 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000016
+                   .cinit    romdata   0x00000b    program   0x000004
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00000c      
+            13 out of 4359 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                        .   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+                    bucle   0x000005    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+                      fin   0x00000b    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                        .   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+                   inicio   0x000000    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+                    bucle   0x000005    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+                      fin   0x00000b    program     static C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia1\Ejercicio8\Division.asm
+
+

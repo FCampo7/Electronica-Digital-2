@@ -1,0 +1,48 @@
+MPASM  5.51                           LED.ASM   9-2-2020  20:18:29         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST p=16f88
+                      00002 
+  00000005            00003 PA    EQU   0x05
+  00000006            00004 PB    EQU   0x06
+  0000009B            00005 ansel EQU       0x9b
+  00000003            00006 ESTADO EQU      0x03
+                      00007 
+Warning[205]: Found directive in column 1. (ORG)
+                      00008 ORG 0x000
+                      00009 
+0000   1683           00010 inicio    bsf ESTADO,5
+0001   30FF           00011         movlw 0xFF
+0002   0085           00012                 movwf PA
+0003   3000           00013                 movlw 0x00
+0004   0086           00014                 movwf PB
+0005   1283           00015                 bcf ESTADO,5
+0006   0805           00016 bucle   movf PA,0
+0007   0000           00017                 nop
+0008   0086           00018                 movwf PB
+0009   2???           00019                 goto bucle
+                      00020                 end
+MPASM  5.51                           LED.ASM   9-2-2020  20:18:29         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ESTADO                            00000003
+PA                                00000005
+PB                                00000006
+__16F88                           00000001
+__DEBUG                           1
+ansel                             0000009B
+bucle                             00000006
+inicio                            00000000
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

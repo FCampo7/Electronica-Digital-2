@@ -1,0 +1,70 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+006     PORTB
+006.2   RB2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     cont
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086     TRISB
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000037  TIMER0_isr
+000042  RB_isr
+00004B  MAIN
+00004B  @cinit1
+000058  @cinit2
+
+Project Directory:
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia3\Problema 3\
+
+Project Files:
+    main.c                                                  [13-oct.-20 15:51  CRC=A2743B65]
+    main.h                                                  [11-oct.-20 11:45  CRC=00000000]
+    D:\Program Files\PICC\Devices\16F88.h                   [15-ene.-18 15:52  CRC=641C4ACB]
+
+Source signature=6AACD0FB
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=33D0
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA
