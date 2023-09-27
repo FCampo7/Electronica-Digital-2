@@ -1,0 +1,128 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+006     lcd
+006     kbd
+006     lcdlat
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+020     kbd_getc.kbd_call_count
+021.0   kbd_getc.kbd_down
+022     kbd_getc.last_key
+023     kbd_getc.col
+024-025 @sprintf_string
+026     MAIN.k
+027     MAIN.x
+028     kbd_getc.kchar
+028     @PRINTF_U_639.P1
+028     lcd_init.i
+028     @PSTRINGCN7_639.P1
+028     MAIN.@SCRATCH1
+028     @PSTRINGC7_639.@SCRATCH1
+029     @PRINTF_U_639.P1
+029-02C lcd_init.LCD_INIT_STRING
+029     kbd_getc.row
+029     @PSTRINGC7_639.@SCRATCH2
+029     @PSTRINGCN7_639.@SCRATCH1
+02A     @DIV88.P1
+02A     @MUL88.P2
+02A     kbd_getc.@SCRATCH1
+02A     @PSTRINGC7_639.@SCRATCH3
+02A     @PSTRINGCN7_639.@SCRATCH2
+02B     @DIV88.P1
+02B     @MUL88.P2
+02B     @PSTRINGC7_639.@SCRATCH4
+02B     @PSTRINGCN7_639.@SCRATCH3
+02C     lcd_putc.c
+02C     @PSTRINGCN7_639.@SCRATCH4
+02C     @DIV88.@SCRATCH1
+02D     lcd_gotoxy.x
+02D     @delay_ms1.P1
+02D     lcd_init.@SCRATCH1
+02E     lcd_gotoxy.y
+02F     lcd_gotoxy.address
+030     lcd_gotoxy.@SCRATCH1
+031     lcd_send_byte.address
+032     lcd_send_byte.n
+033     lcd_read_byte.low
+033     lcd_send_byte.@SCRATCH1
+034     lcd_read_byte.high
+034     lcd_send_nibble.n
+035     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  KEYS.call
+000008  KEYS.data
+000014  @const672.call
+00001A  @const677.call
+00001B  @const678.call
+00001F  @const681.call
+000023  @const688.call
+000027  @const689.call
+00002D  @delay_ms1
+000042  lcd_send_nibble
+00004E  lcd_read_nibble
+000054  lcd_send_byte
+00005A  lcd_read_byte
+000094  lcd_init
+0000D1  kbd_init
+0000D3  lcd_gotoxy
+0000E5  lcd_putc
+000111  @PSTRINGC7_639
+000167  kbd_getc
+0001B7  @MUL88
+0001F0  @PSTRINGCN7_639
+000247  @DIV88
+00025C  @PRINTF_U_639
+000291  MAIN
+000291  @cinit1
+00029E  @cinit2
+
+Project Directory:
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia4\Ejemplo 2\
+
+Project Files:
+    main.c                                                  [21-oct.-20 14:30  CRC=36CE20EB]
+    main.h                                                  [14-oct.-20 18:26  CRC=00000000]
+    D:\Program Files\PICC\Devices\16F88.h                   [15-ene.-18 15:52  CRC=641C4ACB]
+    D:\Program Files\PICC\Drivers\lcd.c                     [22-feb.-16 09:05  CRC=D1A6378A]
+    D:\Program Files\PICC\Drivers\kbd.c                     [25-may.-15 21:33  CRC=7C81F56B]
+
+Source signature=65948E16
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=5868
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

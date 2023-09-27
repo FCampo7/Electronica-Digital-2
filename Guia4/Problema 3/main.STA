@@ -1,0 +1,55 @@
+
+ROM used:   391/4096 (10%)
+            391/4096 (10%) including unused fragments
+
+            0.4 Average locations per line
+            4.4 Average locations per statement
+
+RAM used:   12/368 (3%) at main() level
+            16/368 (4%) worst case
+
+Stack used: 2 worst case (2 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   88    49  55  main.c
+    5     0   0  main.h
+  657     0   0  D:\Program Files\PICC\Devices\16F88.h
+  135    40  45  D:\Program Files\PICC\Drivers\kbd.c
+----- -----
+  885    89 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     21   5    1             @delay_ms1
+0     16   4    0             @const615
+0      2   1    0      3  0.0  kbd_init
+0    137  35    3   4540 10.2  kbd_getc
+ Inline         2             @MUL88
+0     35   9    2     59  1.2  togglepin
+0     32   8    6             @WRITEBITA
+0    130  33    3   1272  7.8  MAIN
+0     14   4    0             @goto61894
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               4
+    Statements              89
+    Comments                173
+    Volume (V)              6666
+    Difficulty (D)          20.0
+    Effort to implement (E) 133578
+    Time to implement (T)   2 hours, 4 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   24
+    Maintainability (MI)    46
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   387  1657  
+00800-00FFF     0  2048  
+
+
+

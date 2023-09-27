@@ -1,0 +1,8 @@
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia4\Problema 4\main on 05-abr.-21 at 17:56
+>>> Warning 216 "main.c" Line 92(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "main.c" Line 92(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_send_byte)
+>>> Warning 216 "main.c" Line 92(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGC7_639)
+>>> Warning 216 "main.c" Line 92(1,2): Interrupts disabled during call to prevent re-entrancy:  (lcd_putc)
+      Memory usage:   ROM=19%      RAM=6% - 13%
+      0 Errors,  4 Warnings.
+Build Successful.

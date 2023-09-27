@@ -1,0 +1,111 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia4\Problema 2\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=8
+D1=14-10-2020
+D1_L=6
+D1_L1=[68210]Project Opened.
+D1_L2=[68215]Started Editing.
+D1_L3=[68786]Stopped Editing.
+D1_L4=[69540]Started Editing.
+D1_L5=[69584]Stopped Editing.
+TotalEdit=94
+TotalDebug=0
+D1_E=6
+D1_D=0
+D1_L6=[69584]Project Closed.
+D2=16-10-2020
+D2_L=16
+D2_L1=[56751]Project Opened.
+D2_L2=[56765]Started Editing.
+D2_L3=[57378]Stopped Editing.
+D2_L4=[57686]Started Editing.
+D2_L5=[58744]Stopped Editing.
+D2_L6=[59353]Started Editing.
+D2_L7=[59936]Stopped Editing.
+D2_L8=[60128]Started Editing.
+D2_L9=[61140]Stopped Editing.
+D2_L10=[61572]Started Editing.
+D2_L11=[61957]Stopped Editing.
+D2_L12=[62877]Started Editing.
+D2_L13=[63179]Stopped Editing.
+D2_L14=[63556]Started Editing.
+D2_L15=[64657]Stopped Editing.
+D2_E=55
+D2_D=0
+D2_L16=[64657]Project Closed.
+D3=19-10-2020
+D3_L=4
+D3_L1=[59319]Project Opened.
+D3_L2=[59355]Project Closed.
+D3_L3=[59838]Project Opened.
+D3_L4=[59975]Project Closed.
+D4=21-10-2020
+D4_L=12
+D4_L1=[49082]Project Opened.
+D4_L2=[49195]Started Editing.
+D4_L3=[50662]Stopped Editing.
+D4_L4=[50854]Started Editing.
+D4_L5=[51306]Stopped Editing.
+D4_E=23
+D4_D=0
+D4_L6=[52042]Project Closed.
+D4_L7=[64877]Project Opened.
+D4_L8=[65915]Started Editing.
+D4_L9=[65935]Stopped Editing.
+D4_L10=[65935]Project Closed.
+D4_L11=[65958]Project Opened.
+D4_L12=[67559]Project Closed.
+D5=22-10-2020
+D5_L=2
+D5_L1=[40914]Project Opened.
+D5_L2=[40954]Project Closed.
+D6=27-10-2020
+D6_L=6
+D6_L1=[54518]Project Opened.
+D6_L2=[54523]Started Editing.
+D6_L3=[55377]Stopped Editing.
+D6_L4=[55391]Started Editing.
+D6_L5=[55691]Stopped Editing.
+D6_E=10
+D6_D=0
+D6_L6=[57853]Project Closed.
+D7=28-10-2020
+D7_L=2
+D7_L1=[38317]Project Opened.
+D7_L2=[38435]Project Closed.
+D8=05-04-2021
+D8_L=2
+D8_L1=[64923]Project Opened.
+D8_L2=[64937]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=1
+2=D:\Program Files\PICC\Drivers\lcd.c
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=66
+[Units]
+Count=1
+1=main (main)

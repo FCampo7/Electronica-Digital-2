@@ -1,0 +1,88 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+005     porta
+006     kbd
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+020     kbd_getc.kbd_call_count
+021.0   kbd_getc.kbd_down
+022     kbd_getc.last_key
+023     kbd_getc.col
+024     MAIN.k
+025     MAIN.x
+026     kbd_getc.kchar
+026     togglepin.pin
+026     MAIN.@SCRATCH1
+027     @WRITEBITA.P1
+027     kbd_getc.row
+027     togglepin.@SCRATCH1
+028     @MUL88.P1
+028     @WRITEBITA.P2
+028     @delay_ms1.P3
+028     kbd_getc.@SCRATCH1
+029-02A @WRITEBITA.P1
+029     @MUL88.P2
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+085     trisa
+086     trisb
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  KEYS.call
+000008  KEYS.data
+000014  kbd_init
+000016  kbd_getc
+000066  @MUL88
+00009F  @delay_ms1
+0000B4  @WRITEBITA
+0000D4  togglepin
+0000F7  MAIN
+0000F7  @cinit1
+000102  @cinit2
+000179  @goto61894
+
+Project Directory:
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia4\Problema 3\
+
+Project Files:
+    main.c                                                  [21-oct.-20 13:36  CRC=BC342F27]
+    main.h                                                  [14-oct.-20 19:19  CRC=00000000]
+    D:\Program Files\PICC\Devices\16F88.h                   [15-ene.-18 15:52  CRC=641C4ACB]
+    D:\Program Files\PICC\Drivers\kbd.c                     [25-may.-15 21:33  CRC=7C81F56B]
+
+Source signature=195464C8
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=F485
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

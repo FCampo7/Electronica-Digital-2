@@ -1,0 +1,115 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+006     lcdlat
+006     lcd
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     @INTERRUPT_AREA
+02A     @INTERRUPT_AREA
+02B     @INTERRUPT_AREA
+02C     @INTERRUPT_AREA
+02D     cont
+02E     ciclo
+02F     x
+030-031 @sprintf_string
+032     lcd_init.i
+032     mde_cicloLCD.@SCRATCH1
+033-036 lcd_init.LCD_INIT_STRING
+037     lcd_init.@SCRATCH1
+03F     @PSTRINGC7_639.@SCRATCH1
+040     @PSTRINGC7_639.@SCRATCH2
+041     @PSTRINGC7_639.@SCRATCH3
+042     lcd_putc.c
+042     @PSTRINGC7_639.@SCRATCH4
+043     lcd_gotoxy.x
+043     @delay_ms1.P1
+044     lcd_gotoxy.y
+045     lcd_gotoxy.address
+046     lcd_gotoxy.@SCRATCH1
+047     lcd_send_byte.address
+048     lcd_send_byte.n
+049     lcd_read_byte.low
+049     lcd_send_byte.@SCRATCH1
+04A     lcd_read_byte.high
+04A     lcd_send_nibble.n
+04B     lcd_read_byte.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+086     lcdtris
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000051  lcd_send_byte
+000057  lcd_read_byte
+00006C  lcd_read_nibble
+0000AE  @delay_ms1
+0000C3  lcd_putc
+00010F  @PSTRINGC7_639
+000165  TIMER0_isr
+000179  @const655.call
+00017A  @const662.call
+000188  @const663.call
+00018B  @const664.call
+00018E  @const665.call
+000191  init_cicloLCD
+000196  lcd_init
+0001D2  lcd_send_nibble
+000209  mde_cicloLCD
+0002B5  lcd_gotoxy
+0002F0  MAIN
+0002F0  @cinit1
+0002FF  @cinit2
+
+Project Directory:
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia4\Problema 4\
+
+Project Files:
+    main.c                                                  [05-abr.-21 17:56  CRC=9BBAB64F]
+    main.h                                                  [15-oct.-20 11:37  CRC=00000000]
+    D:\Program Files\PICC\Devices\16F88.h                   [15-ene.-18 15:52  CRC=641C4ACB]
+    D:\Program Files\PICC\Drivers\lcd.c                     [22-feb.-16 09:05  CRC=D1A6378A]
+
+Source signature=A323702E
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=59B5
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

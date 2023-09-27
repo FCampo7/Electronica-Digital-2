@@ -1,0 +1,75 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia4\Problema 4\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=5
+D1=15-10-2020
+D1_L=6
+D1_L1=[41825]Project Opened.
+D1_L2=[41898]Started Editing.
+D1_L3=[43444]Stopped Editing.
+D1_L4=[43484]Started Editing.
+D1_L5=[45299]Stopped Editing.
+TotalEdit=194
+TotalDebug=0
+D1_E=52
+D1_D=0
+D1_L6=[45300]Project Closed.
+D2=16-10-2020
+D2_L=4
+D2_L1=[41430]Project Opened.
+D2_L2=[41457]Started Editing.
+D2_L3=[47833]Stopped Editing.
+D2_E=107
+D2_D=0
+D2_L4=[47833]Project Closed.
+D3=19-10-2020
+D3_L=4
+D3_L1=[59356]Project Opened.
+D3_L2=[59673]Project Closed.
+D3_L3=[59975]Project Opened.
+D3_L4=[60332]Project Closed.
+D4=21-10-2020
+D4_L=2
+D4_L1=[48333]Project Opened.
+D4_L2=[48755]Project Closed.
+D5=05-04-2021
+D5_L=6
+D5_L1=[62194]Project Opened.
+D5_L2=[62236]Started Editing.
+D5_L3=[64092]Stopped Editing.
+D5_L4=[64142]Started Editing.
+D5_L5=[64629]Stopped Editing.
+D5_E=35
+D5_D=0
+D5_L6=[64629]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=2
+2=D:\Program Files\PICC\Drivers\lcd.c
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=71
+[Units]
+Count=1
+1=main (main)

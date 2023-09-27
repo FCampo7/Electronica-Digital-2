@@ -1,0 +1,30 @@
+ÀÄmain
+   ÀÄMAIN  0/130  Ram=3
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄkbd_init  0/2  Ram=0
+      ÃÄkbd_getc  0/137  Ram=3
+      ³  ÃÄ@MUL88  (Inline)  Ram=2
+      ³  ÀÄ@const615  0/16  Ram=0
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄ@goto61894  0/14  Ram=0
+      ÃÄtogglepin  0/35  Ram=2
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÃÄ@delay_ms1  0/21  Ram=1
+      ³  ÃÄ@WRITEBITA  0/32  Ram=6
+      ³  ÀÄ@WRITEBITA  0/32  Ram=6
+      ÃÄtogglepin  0/35  Ram=2
+      ³  ÀÄ*
+      ÃÄtogglepin  0/35  Ram=2
+      ³  ÀÄ*
+      ÃÄtogglepin  0/35  Ram=2
+      ³  ÀÄ*
+      ÃÄtogglepin  0/35  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÃÄtogglepin  0/35  Ram=2
+      ³  ÀÄ*
+      ÃÄtogglepin  0/35  Ram=2
+      ³  ÀÄ*
+      ÃÄ@delay_ms1  0/21  Ram=1
+      ÀÄ@delay_ms1  0/21  Ram=1

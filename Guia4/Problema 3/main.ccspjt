@@ -1,0 +1,101 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F88
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia4\Problema 3\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=6
+D1=14-10-2020
+D1_L=10
+D1_L1=[69585]Project Opened.
+D1_L2=[69589]Started Editing.
+D1_L3=[70459]Stopped Editing.
+D1_L4=[70803]Started Editing.
+D1_L5=[71351]Stopped Editing.
+D1_L6=[72240]Started Editing.
+D1_L7=[72963]Stopped Editing.
+D1_L8=[73136]Started Editing.
+D1_L9=[73717]Stopped Editing.
+TotalEdit=82
+TotalDebug=0
+D1_E=31
+D1_D=0
+D1_L10=[73717]Project Closed.
+D2=15-10-2020
+D2_L=8
+D2_L1=[39084]Project Opened.
+D2_L2=[39126]Started Editing.
+D2_L3=[39814]Stopped Editing.
+D2_L4=[40088]Started Editing.
+D2_L5=[41142]Stopped Editing.
+D2_L6=[41541]Started Editing.
+D2_L7=[41825]Stopped Editing.
+D2_E=24
+D2_D=0
+D2_L8=[41825]Project Closed.
+D3=19-10-2020
+D3_L=14
+D3_L1=[44003]Project Opened.
+D3_L2=[44657]Started Editing.
+D3_L3=[45579]Stopped Editing.
+D3_L4=[45609]Started Editing.
+D3_L5=[46224]Stopped Editing.
+D3_L6=[46351]Started Editing.
+D3_L7=[46788]Stopped Editing.
+D3_L8=[46947]Started Editing.
+D3_L9=[47253]Stopped Editing.
+D3_L10=[47275]Started Editing.
+D3_L11=[47366]Stopped Editing.
+D3_E=20
+D3_D=0
+D3_L12=[47366]Project Closed.
+D3_L13=[58957]Project Opened.
+D3_L14=[59318]Project Closed.
+D4=20-10-2020
+D4_L=4
+D4_L1=[54190]Project Opened.
+D4_L2=[54204]Started Editing.
+D4_L3=[54434]Stopped Editing.
+D4_E=4
+D4_D=0
+D4_L4=[54434]Project Closed.
+D5=21-10-2020
+D5_L=4
+D5_L1=[48755]Project Opened.
+D5_L2=[48937]Started Editing.
+D5_L3=[49081]Stopped Editing.
+D5_E=3
+D5_D=0
+D5_L4=[49081]Project Closed.
+D6=05-04-2021
+D6_L=2
+D6_L1=[64630]Project Opened.
+D6_L2=[64897]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=13
+Count=1
+2=D:\Program Files\PICC\Drivers\kbd.c
+t2=104
+[main.c]
+Type=4
+
+[defines]
+buildcount=52
+[Units]
+Count=1
+1=main (main)
