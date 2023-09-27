@@ -1,0 +1,5 @@
+ÀÄmain
+   ÀÄmain  0/61  Ram=1
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄ@GETCH_1_  0/38  Ram=1
+      ÀÄ@goto36340  0/8  Ram=0

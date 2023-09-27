@@ -1,0 +1,122 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+021-022 main.q
+023-026 main.p
+027-028 @ITOF.P1
+027-028 @PRINTF_LD_9600_53_50.P2
+027     @PSTRINGCN7_9600_53_50.P3
+027     @delay_ms1.P4
+027-02A @PRINTF_L32D_9600_53_50FPFPF.P5
+027     main.@SCRATCH1
+028     main.@SCRATCH2
+028     @PSTRINGCN7_9600_53_50.@SCRATCH1
+029     main.@SCRATCH3
+029     @PSTRINGCN7_9600_53_50.@SCRATCH2
+029     @PRINTF_LD_9600_53_50.@SCRATCH1
+02A     main.@SCRATCH4
+02A     @PSTRINGCN7_9600_53_50.@SCRATCH3
+02A     @PRINTF_LD_9600_53_50.@SCRATCH2
+02B     @PRINTF_L32D_9600_53_50FPFPF.P1
+02B-02E @DIVFF.P2
+02B     @PSTRINGCN7_9600_53_50.@SCRATCH4
+02B     @PRINTF_LD_9600_53_50.@SCRATCH3
+02C     @PRINTF_LD_9600_53_50.@SCRATCH4
+02C     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH1
+02D     @PRINTF_LD_9600_53_50.@SCRATCH5
+02D     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH2
+02E     @PRINTF_LD_9600_53_50.@SCRATCH6
+02E     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH3
+02F-032 @DIVFF.P1
+02F     @PRINTF_LD_9600_53_50.@SCRATCH7
+02F     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH4
+030     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH5
+031     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH6
+032     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH7
+033     @DIVFF.@SCRATCH1
+033     @PRINTF_L32D_9600_53_50FPFPF.@SCRATCH8
+034-037 @DIV3232.P1
+034-037 @FTOSD.P2
+034-037 @MULFF.P3
+034     @DIVFF.@SCRATCH2
+035     @DIVFF.@SCRATCH3
+036     @DIVFF.@SCRATCH4
+037     @DIVFF.@SCRATCH5
+038-03B @MULFF.P1
+038-03B @DIV3232.P2
+038     @DIVFF.@SCRATCH6
+038     @FTOSD.@SCRATCH1
+03C     @MULFF.@SCRATCH1
+03C     @DIV3232.@SCRATCH1
+03D     @MULFF.@SCRATCH2
+03D     @DIV3232.@SCRATCH2
+03E     @MULFF.@SCRATCH3
+03E     @DIV3232.@SCRATCH3
+03F     @MULFF.@SCRATCH4
+03F     @DIV3232.@SCRATCH4
+040     @MULFF.@SCRATCH5
+040     @DIV3232.@SCRATCH5
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const629.call
+00000A  @const634.call
+000014  @ITOF
+000032  @MULFF
+0000A7  @DIVFF
+000172  @PSTRINGCN7_9600_53_50
+0001CB  @PRINTF_LD_9600_53_50
+000242  @DIV3232
+000291  @PRINTF_L32D_9600_53_50FPFPF
+0002B8  @FTOSD
+000376  @delay_ms1
+00038C  @cinit1
+00038C  main
+00039F  @cinit2
+
+Project Directory:
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Ejercicios\Guia5\EX3\
+
+Project Files:
+    main.c                                                  [30-nov.-20 11:51  CRC=4FDCC39D]
+    main.h                                                  [20-oct.-20 16:10  CRC=00000000]
+    D:\Program Files\PICC\Devices\16F88.h                   [15-ene.-18 15:52  CRC=641C4ACB]
+
+Source signature=18155933
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=9A74
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

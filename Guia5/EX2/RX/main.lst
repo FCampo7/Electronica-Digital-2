@@ -1,0 +1,186 @@
+CCS PCM C Compiler, Version 5.076, 56587               20-Oct-20 16:08
+
+               Filename:   D:\Ezequiel\My eBooks\Favaloro\ED\II\GUIA 5\EX2\RX\main.lst
+
+               ROM used:   111 words (3%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           7 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   02A
+0003:  NOP
+.................... #include <main.h> 
+.................... #include <16F88.h> 
+.................... //////////// Standard Header file for the PIC16F88 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F88 
+*
+0067:  BCF    0A.0
+0068:  BCF    0A.1
+0069:  BCF    0A.2
+006A:  ADDWF  02,F
+006B:  GOTO   04E
+006C:  GOTO   054
+006D:  GOTO   05A
+006E:  GOTO   060
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #use delay(crystal=4MHz) 
+....................  
+....................  
+.................... #include <16f88.h> 
+.................... //////////// Standard Header file for the PIC16F88 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F88 
+....................  
+.................... #list 
+....................  
+.................... #fuses hs, nowdt, noprotect, noput 
+.................... #use delay(clock=4M) 
+.................... #use RS232(baud=9600, rcv=pin_b2, bits=8, parity=N) 
+*
+0004:  BSF    03.5
+0005:  BSF    06.2
+0006:  BCF    03.5
+0007:  BTFSC  06.2
+0008:  GOTO   007
+0009:  MOVLW  08
+000A:  MOVWF  77
+000B:  CLRF   22
+000C:  BSF    77.7
+000D:  GOTO   01C
+000E:  BCF    77.7
+000F:  GOTO   01C
+0010:  BCF    03.0
+0011:  BTFSC  06.2
+0012:  BSF    03.0
+0013:  RRF    22,F
+0014:  BSF    77.6
+0015:  GOTO   01C
+0016:  BCF    77.6
+0017:  DECFSZ 77,F
+0018:  GOTO   010
+0019:  MOVF   22,W
+001A:  MOVWF  78
+001B:  GOTO   028
+001C:  MOVLW  1C
+001D:  BTFSC  77.7
+001E:  MOVLW  07
+001F:  MOVWF  78
+0020:  DECFSZ 78,F
+0021:  GOTO   020
+0022:  NOP
+0023:  BTFSC  77.7
+0024:  GOTO   00E
+0025:  BTFSC  77.6
+0026:  GOTO   016
+0027:  GOTO   010
+0028:  BCF    0A.3
+0029:  GOTO   045 (RETURN)
+.................... #use standard_io(b) 
+....................  
+.................... void main() { 
+002A:  MOVF   03,W
+002B:  ANDLW  1F
+002C:  MOVWF  03
+002D:  BSF    03.5
+002E:  BCF    05.0
+002F:  BCF    03.5
+0030:  BSF    05.0
+0031:  BSF    03.5
+0032:  BCF    1F.4
+0033:  BCF    1F.5
+0034:  MOVF   1B,W
+0035:  ANDLW  80
+0036:  MOVWF  1B
+0037:  MOVLW  07
+0038:  MOVWF  1C
+0039:  BCF    03.7
+....................    char valor; 
+....................    set_tris_b(0x00); 
+003A:  MOVLW  00
+003B:  MOVWF  06
+....................    output_b(0x00); 
+003C:  CLRF   06
+003D:  BCF    03.5
+003E:  CLRF   06
+....................    set_tris_a(0x00); 
+003F:  BSF    03.5
+0040:  MOVWF  05
+....................    output_a(0x00); 
+0041:  CLRF   05
+0042:  BCF    03.5
+0043:  CLRF   05
+....................    while(TRUE) { 
+....................       valor = getc(); 
+0044:  GOTO   004
+0045:  MOVF   78,W
+0046:  MOVWF  21
+....................       switch(valor) { 
+0047:  MOVLW  31
+0048:  SUBWF  21,W
+0049:  ADDLW  FC
+004A:  BTFSC  03.0
+004B:  GOTO   065
+004C:  ADDLW  04
+004D:  GOTO   067
+....................          case '1': output_toggle(pin_a0); break; 
+004E:  BSF    03.5
+004F:  BCF    05.0
+0050:  MOVLW  01
+0051:  BCF    03.5
+0052:  XORWF  05,F
+0053:  GOTO   065
+....................          case '2': output_toggle(pin_a1); break; 
+0054:  BSF    03.5
+0055:  BCF    05.1
+0056:  MOVLW  02
+0057:  BCF    03.5
+0058:  XORWF  05,F
+0059:  GOTO   065
+....................          case '3': output_toggle(pin_a2); break; 
+005A:  BSF    03.5
+005B:  BCF    05.2
+005C:  MOVLW  04
+005D:  BCF    03.5
+005E:  XORWF  05,F
+005F:  GOTO   065
+....................          case '4': output_toggle(pin_a3); break; 
+0060:  BSF    03.5
+0061:  BCF    05.3
+0062:  MOVLW  08
+0063:  BCF    03.5
+0064:  XORWF  05,F
+....................       } 
+0065:  GOTO   044
+....................    } 
+....................  
+.................... } 
+0066:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F6A   NOWDT NOPUT HS MCLR BROWNOUT NOLVP NOCPD NOWRT NODEBUG CCPB0 NOPROTECT
+   Word  2: 3FFF   FCMEN IESO

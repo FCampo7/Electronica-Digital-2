@@ -1,0 +1,64 @@
+
+ROM used:   1261/4096 (31%)
+            1261/4096 (31%) including unused fragments
+
+            1.1 Average locations per line
+            13.1 Average locations per statement
+
+RAM used:   15/368 (4%) at main() level
+            37/368 (10%) worst case
+
+Stack used: 5 worst case (5 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   26    12  12  main.c
+  657     0   0  C:\Program Files (x86)\PICC\Devices\16f88.h
+  456    84  88  C:\Program Files (x86)\PICC\Drivers\LCD.c
+----- -----
+ 1139    96 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     21   2    1   1272  7.8  @delay_ms1
+ Inline         3    596  5.9  lcd_read_byte
+0      6   0    0     59  4.2  lcd_read_nibble
+0     12   1    1    179  3.3  lcd_send_nibble
+0     64   5    3    460  4.7  lcd_send_byte
+0     61   5    6    814  7.2  lcd_init
+0     18   1    4    208  6.3  lcd_gotoxy
+0     44   3    1    354  4.7  lcd_putc
+0    145  11   10    348  3.5  MAIN
+0     30   2    2             @ITOF
+0    117   9   13             @MULFF
+0    203  16   14             @DIVFF
+0      6   0    0    158  2.2  @const664
+0     87   7    5    918  6.2  @PSTRINGCN7_639
+0    129  10    9   1005  6.2  @PRINTF_LD_639
+0     10   1    0             @const669
+ Inline         5             @FTOSD
+0     79   6   13             @DIV3232
+0    225  18   13     38  1.2  @PRINTF_L32D_639FPFPF
+ Inline         0     38  1.2  @cinit1
+
+Program metrics:
+    Functions               14
+    Statements              96
+    Comments                227
+    Volume (V)              10269
+    Difficulty (D)          63.5
+    Effort to implement (E) 652085
+    Time to implement (T)   10 hours, 4 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   36
+    Maintainability (MI)    103
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1257  787  
+00800-00FFF     0  2048  
+
+
+
